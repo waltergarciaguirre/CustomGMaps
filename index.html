@@ -23,12 +23,16 @@
     <script>
       var map;
       function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        new google.maps.Map(document.getElementById("map"), {
           mapId: "38c0b7d92370171a",
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          center: {
+            lat: 48.85,
+            lng: 2.35
+          },
+          zoom: 12,
         });
       }
+      window.initMap = initMap;
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3-NkAM1izNtZnKys-AphQX-VXQ2Y2Crw&callback=initMap"
     async defer></script>
