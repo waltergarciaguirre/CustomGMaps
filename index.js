@@ -8,8 +8,7 @@ function initAutocomplete() {
     const map = new google.maps.Map(document.getElementById("map"), {
       mapId: "38c0b7d92370171a",
       center: { lat: -33.8688, lng: 151.2195 },
-      zoom: 13,
-      mapTypeId: "roadmap",
+      zoom: 13
     });
     // Create the search box and link it to the UI element.
     const input = document.getElementById("pac-input");
