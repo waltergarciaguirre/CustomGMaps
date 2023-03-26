@@ -15,8 +15,12 @@ function initAutocomplete() {
   const input = document.getElementById("pac-input");
   const searchBox = new google.maps.places.SearchBox(input);
 
-  //Display City Name
-  var cityOutput = document.getElementById('city-output');
+  // Create the text box to display the city name.
+  const cityOutput = document.createElement('input');
+  cityOutput.setAttribute('id', 'city-output');
+  cityOutput.setAttribute('name', 'city');
+  cityOutput.setAttribute('readonly', '');
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(cityOutput);
 
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   // Bias the SearchBox results towards current map's viewport.
