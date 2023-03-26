@@ -91,7 +91,7 @@ function initAutocomplete() {
     cityOutput.value = places[0].formatted_address;
 
     // Set the value of the lat long name text box to the selected place.
-    latLon.value = geometry[0].location
+    latLon.value = places[0].geometry.location;
   });
 }
 
