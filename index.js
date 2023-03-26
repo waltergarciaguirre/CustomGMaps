@@ -22,6 +22,13 @@ function initAutocomplete() {
   cityOutput.setAttribute('readonly', '');
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(cityOutput);
 
+  // Create the text box to display the city name.
+  const latLon = document.createElement('input');
+  latLon.setAttribute('id', 'latlon-output');
+  latLon.setAttribute('name', 'city');
+  latLon.setAttribute('readonly', '');
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(latLon);
+
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   // Bias the SearchBox results towards current map's viewport.
   map.addListener("bounds_changed", () => {
@@ -82,6 +89,9 @@ function initAutocomplete() {
 
     // Set the value of the city name text box to the selected place.
     cityOutput.value = places[0].formatted_address;
+
+    // Set the value of the lat long name text box to the selected place.
+    latLon.value = geometry[0].location
   });
 }
 
