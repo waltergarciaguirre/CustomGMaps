@@ -15,6 +15,9 @@ function initAutocomplete() {
   const input = document.getElementById("pac-input");
   const searchBox = new google.maps.places.SearchBox(input);
 
+  //Display City Name
+  var cityOutput = document.getElementById('city-output');
+
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   // Bias the SearchBox results towards current map's viewport.
   map.addListener("bounds_changed", () => {
@@ -72,6 +75,9 @@ function initAutocomplete() {
       }
     });
     map.fitBounds(bounds);
+
+    // Set the value of the city name text box to the selected place.
+    cityOutput.value = places[0].formatted_address;
   });
 }
 
